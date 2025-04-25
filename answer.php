@@ -32,8 +32,8 @@
       <div class="page-content-php">
         <div id="employment-info">
           <?php
-          if (isset($_POST['user-age'])) {
-            $userAge = intval($_POST['user-age']);
+          if (isset($_GET['user-age'])) {
+            $userAge = intval($_GET['user-age']);
             $result = "";
 
             if ($userAge >= 17) {
@@ -47,9 +47,14 @@
             }
 
             echo "<div id='result'>$result</div>";
+          } else {
+            echo "<div id='result'>Please enter your age from the form.</div>";
           }
           ?>
-          </form>
+        </div>
+      </div>
+    </main>
+  </div>
 </body>
 
 </html>
