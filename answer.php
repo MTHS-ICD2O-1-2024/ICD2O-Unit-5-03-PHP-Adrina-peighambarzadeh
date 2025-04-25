@@ -34,22 +34,16 @@
           <?php
           if (isset($_GET['user-age'])) {
             $userAge = intval($_GET['user-age']);
-            $result = "";
-
-            if ($userAge >= 17) {
-              $result = "You can see an R rated movie alone!";
-            } elseif ($userAge >= 13) {
-              $result = "You can see a PG-13 rated movie alone!";
-            } elseif ($userAge >= 5) {
-              $result = "You can see a G or PG rated movie alone!";
-            } else {
-              $result = "Uh. You're too young for most things.!";
-            }
-
-            echo "<div id='result'>$result</div>";
-          } else {
-            echo "<div id='result'>Please enter your age from the form.</div>";
           }
+            if ($userAge >= 17) {
+              echo'If you are ' . $userAge . " You can see an R rated movie alone!";
+            } elseif ($userAge >= 13) {
+              echo 'If you are ' . $userAge . " You can see a PG-13 rated movie alone!";
+            } elseif ($userAge >= 5) {
+              echo 'If you are ' . $userAge . " You can see a G or PG rated movie alone!";
+            } else {
+              echo 'If you are ' . $userAge . " You're too young for most things.!";
+            }
           ?>
         </div>
       </div>
