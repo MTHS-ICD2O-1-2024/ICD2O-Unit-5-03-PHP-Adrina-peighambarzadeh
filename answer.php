@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="utf-8" />
-  <meta name="description" content="The Random Number guess, with PHP" />
+  <meta name="description" content="Watch a Movie, with PHP" />
   <meta name="keywords" content="math, salary, PHP, income" />
   <meta name="author" content="Adrina.Peighambarzadeh" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -14,7 +14,7 @@
   <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32x32.png" />
   <link rel="icon" type="image/png" sizes="16x16" href="./favicon-16x16.png" />
   <link rel="manifest" href="site.webmanifest" />
-  <title>The Random Number guess, with PHP</title>
+  <title>Watch a Movie, with PHP</title>
 </head>
 
 <body>
@@ -22,31 +22,34 @@
   <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
     <header class="mdl-layout__header">
       <div class="mdl-layout__header-row">
-        <span class="mdl-layout-title">The Random Number guess, with PHP</span>
+        <span class="mdl-layout-title">Watch a Movie, with PHP</span>
       </div>
     </header>
     <main class="mdl-layout__content">
       <div class="right-image">
-        <img src="./images/Screenshot 2025-04-02 12.44.35.png" alt="sphere" width="300" />
+        <img src="./images/movie_ratings.jpg" alt="ratings" width="300" />
       </div>
       <div class="page-content-php">
         <div id="employment-info">
           <?php
+          if (isset($_POST['user-age'])) {
+            $userAge = intval($_POST['user-age']);
+            $result = "";
 
-          $result = "";
-          $randomNumber = rand(1, 6);
-
-          if ($_SERVER["REQUEST_METHOD"] == "POST") {
-            $userNumber = isset($_POST["user-number"]) ? (int)$_POST["user-number"] : 0;
-
-            if ($userNumber == $randomNumber) {
-              $result = "You have guessed the correct number!";
+            if ($userAge >= 17) {
+              $result = "You can see an R rated movie alone!";
+            } elseif ($userAge >= 13) {
+              $result = "You can see a PG-13 rated movie alone!";
+            } elseif ($userAge >= 5) {
+              $result = "You can see a G or PG rated movie alone!";
             } else {
-              $result = "You have guessed the wrong number!";
+              $result = "Uh. You're too young for most things.!";
             }
+
+            echo "<div id='result'>$result</div>";
           }
           ?>
-          <input type="number" id="user-number" name="user-number" min="1" max="6" required>
+
           <input type="submit" value="Check">
           </form>
 
