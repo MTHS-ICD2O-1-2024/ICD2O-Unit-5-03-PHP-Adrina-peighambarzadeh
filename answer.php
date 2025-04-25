@@ -49,11 +49,7 @@
             echo "<div id='result'>$result</div>";
           }
           ?>
-
-          <input type="submit" value="Check">
           </form>
-
-          <p id="result"><?php echo $result; ?></p>
 </body>
 
 </html>

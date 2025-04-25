@@ -35,13 +35,13 @@
         <form action="./answer.php" method="GET">
           <div class="mdl-textfield mdl-js-textfield">
             <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" name="user-age" />
-            <label class="mdl-textfield__label" for="user-age">age...6</label>
+            <label class="mdl-textfield__label" for="user-age">age...</label>
             <span class="mdl-textfield__error">Input is not a number!</span>
           </div>
           <br />
           <!-- Accent-colored raised button with ripple -->
           <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent"
-            type="submit">
+            type="result">
             Check
           </button>
         </form>
